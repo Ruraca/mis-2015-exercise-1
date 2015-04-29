@@ -11,18 +11,18 @@
 
     <EditText
         android:id="@+id/edittext"
-        android:hint="Why is this thing so broken?"
+        android:hint="Write &quot;Timmy&quot;"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
        <Button
-           android:layout_below="@+id/edittext"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_centerHorizontal="true"
-           android:text="My darling, please don't cry!"
+           android:text="Send "
            android:onClick="brokenFunction"
-        />
+           android:layout_below="@+id/edittext"
+           android:layout_centerHorizontal="true"
+           android:id="@+id/boton" />
 
 </RelativeLayout>

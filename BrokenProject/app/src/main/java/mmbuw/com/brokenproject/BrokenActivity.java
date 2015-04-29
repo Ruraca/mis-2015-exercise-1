@@ -3,20 +3,29 @@ package mmbuw.com.brokenproject;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
+import android.view.View;
+
+import java.io.IOException;
 
 
 public class BrokenActivity extends Activity {
 
+    public final static String EXTRA_MESSAGE = "CUIDADOR EXTRA MESSAGE";
     private EditText auntEdith;
+    private Button boton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_broken);
-        EditText auntEdit = (EditText)findViewById(R.id.edittext);
+        boton = (Button) findViewById(R.id.boton);
+        auntEdith = (EditText) findViewById(R.id.edittext);
+
     }
 
 
@@ -39,15 +48,18 @@ public class BrokenActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void brokenFunction(){
-        //I was once, perhaps, possibly a functioning function
-        if (auntEdith.getText().toString().equals("Timmy")){
-            System.out.println("Timmy fixed a bug!");
-        }
+    public void brokenFunction(View view)throws IOException{
 
-        System.out.println("If this appears in your console, you fixed a bug.");
-        Intent intent = new Intent(this,AnotherBrokenActivity.class);
-        String message = "This string will be passed to the new activity";
-        startActivity(intent);
+        //I was once, perhaps, possibly a functioning function
+        if (auntEdith.getText().toString().equals("Timmy")) {
+            System.out.println("Timmy fixed a bug!");
+
+
+            System.out.println("If this appears in your console, you fixed a bug.");
+            Intent intent = new Intent(this, AnotherBrokenActivity.class);
+            String message = "This string will be passed to the new activity";
+            startActivity(intent);
+
+        }
     }
 }
